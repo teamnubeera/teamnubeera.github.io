@@ -1,0 +1,1172 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-high": "#ece6dc",
+            "surface-container": "#f2ece4",
+            "surface-dim": "#dcd6cc",
+            "on-surface": "#3a302a",
+            "on-tertiary-fixed": "#2e1515",
+            "surface-bright": "#faf5ee",
+            "on-error-container": "#7a1a10",
+            "background": "#faf5ee",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#eae2da",
+            "surface": "#faf5ee",
+            "surface-variant": "#ece6dc",
+            "on-secondary-container": "#605850",
+            "surface-container-low": "#f6f0e8",
+            "tertiary": "#8c3c3c",
+            "tertiary-container": "#d47070",
+            "on-primary-container": "#fbe8d8",
+            "on-surface-variant": "#605850",
+            "tertiary-fixed": "#fce0e0",
+            "error-container": "#fce4e0",
+            "outline": "#9a9088",
+            "surface-tint": "#c2652a",
+            "inverse-on-surface": "#faf5ee",
+            "on-primary-fixed-variant": "#8a4518",
+            "primary": "#c2652a",
+            "inverse-surface": "#3a302a",
+            "secondary": "#78706a",
+            "on-tertiary-container": "#3a2020",
+            "error": "#c0392b",
+            "on-tertiary-fixed-variant": "#6e3030",
+            "on-primary-fixed": "#401a08",
+            "primary-fixed-dim": "#f0a878",
+            "secondary-fixed-dim": "#cec6be",
+            "on-secondary-fixed": "#2a2420",
+            "tertiary-fixed-dim": "#e8a0a0",
+            "secondary-fixed": "#eae2da",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#f0a878",
+            "on-secondary-fixed-variant": "#504840",
+            "outline-variant": "#d8d0c8",
+            "primary-container": "#e08850",
+            "on-error": "#ffffff",
+            "surface-container-highest": "#e6e0d6",
+            "on-primary": "#ffffff",
+            "on-background": "#3a302a",
+            "primary-fixed": "#fbe8d8",
+            "on-secondary": "#ffffff",
+            "warm-amber": "#d97736",
+            "warm-gold": "#d48b38",
+            "warm-border": "#e5dcd3",
+            "warm-border-focus": "#c2652a"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "headline": ["EB Garamond", "serif"],
+            "display": ["EB Garamond", "serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Manrope", "sans-serif"],
+            "mono": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background font-body text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-primary selection:text-white">
+<!-- Ambient Golden Glow Backdrops -->
+<div class="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[520px] bg-gradient-to-b from-[#f5d9be]/60 via-[#f9ebd9]/40 to-transparent rounded-full blur-[130px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-10 right-10 w-[420px] h-[420px] bg-[#f8e0c8]/40 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+<div class="fixed top-48 left-12 w-[340px] h-[340px] bg-[#fbe7d5]/50 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+<!-- Header -->
+<header class="fixed top-0 w-full z-50 bg-background/85 backdrop-blur-xl border-b border-warm-border">
+<div class="h-16 w-full max-w-7xl mx-auto px-6 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-[#d97736] flex items-center justify-center shadow-md shadow-primary/20 text-white">
+<span class="material-symbols-outlined text-[20px]">wb_sunny</span>
+</div>
+<div class="flex flex-col"><span class="font-headline font-bold text-[19px] leading-tight text-on-surface tracking-tight">Nexus</span><span class="font-mono text-[10.5px] uppercase tracking-wider text-on-surface-variant font-medium">Secure Identity Portal</span></div>
+</div>
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/60">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="font-mono text-[11px] text-on-surface-variant font-medium">SOC-2 Type II Certified • 256-bit Encrypted</span>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-6 text-[13.5px] font-medium" data-active-classes="text-primary font-semibold">
+<a aria-current="page" class="text-primary font-semibold hover:text-warm-amber transition-colors" data-path="sign-in" href="#">Sign In</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="sso-portal" href="#">Enterprise SSO</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="security-directory" href="#">Directory Sync</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="compliance-overview" href="#">Compliance</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container border border-outline-variant/50 text-on-surface-variant font-mono text-[11.5px]">
+<span class="material-symbols-outlined text-[15px] text-primary">public</span>
+<span class="">us-east-1</span>
+</div>
+<button aria-label="Select language" class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container border border-outline-variant/50 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">translate</span>
+</button>
+<button aria-label="Toggle theme" class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container border border-outline-variant/50 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">light_mode</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="w-full pt-24 pb-16 flex-1 flex flex-col items-center justify-center px-4">
+<div class="w-full max-w-xl mx-auto flex flex-col">
+<!-- View Switcher -->
+<aside aria-label="Authentication Flow Switcher" class="w-full mb-6">
+<div class="bg-surface-container-low/95 backdrop-blur-md rounded-2xl p-1.5 flex items-center justify-between border border-warm-border shadow-sm overflow-x-auto gap-1">
+<span class="font-mono text-[11px] text-on-surface-variant font-medium px-2.5 hidden sm:inline-block uppercase tracking-wider">Mode:</span>
+<button class="view-tab-btn px-3.5 py-1.5 rounded-xl font-medium text-[13px] text-white bg-primary shadow-sm transition-all whitespace-nowrap" data-switch-view="signup" type="button">Sign Up</button>
+<button class="view-tab-btn px-3.5 py-1.5 rounded-xl font-medium text-[13px] text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all whitespace-nowrap" data-switch-view="login" type="button">Log In</button>
+<button class="view-tab-btn px-3.5 py-1.5 rounded-xl font-medium text-[13px] text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all whitespace-nowrap" data-switch-view="forgot" type="button">Forgot Password</button>
+<button class="view-tab-btn px-3.5 py-1.5 rounded-xl font-medium text-[13px] text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all whitespace-nowrap" data-switch-view="reset" type="button">Reset Key</button>
+<button class="view-tab-btn px-3 py-1.5 rounded-xl font-medium text-[13px] text-primary hover:bg-primary/10 transition-all flex items-center gap-1 whitespace-nowrap font-mono" id="trigger-otp-direct" type="button">
+<span class="material-symbols-outlined text-[16px]">pin</span> OTP Modal
+          </button>
+</div>
+</aside>
+<!-- Main Sahara Card Frame -->
+<div class="relative bg-surface-container-lowest/95 backdrop-blur-2xl rounded-3xl border border-warm-border shadow-[0_20px_60px_-15px_rgba(194,101,42,0.12)] p-7 sm:p-11 transition-all overflow-hidden">
+<!-- Glowing Terracotta Accent Top Border -->
+<div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#d97736] via-[#c2652a] to-[#d48b38]"></div>
+<!-- VIEW 1: SIGN UP -->
+<section class="auth-view flex flex-col" id="view-signup">
+<!-- Logo & Header -->
+<div class="flex flex-col items-center text-center mb-8">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#faede1] to-[#f5d9be] border border-[#f0cbb0] flex items-center justify-center p-3 mb-3.5 shadow-sm text-primary">
+<span class="material-symbols-outlined text-[34px]">verified_user</span>
+</div>
+<h1 class="font-headline font-semibold text-3xl sm:text-4xl text-on-surface tracking-tight">Create your account</h1>
+<p class="font-body text-[14px] text-on-surface-variant mt-1.5">Sign up to get started with your account</p>
+</div>
+<!-- Social Quick Logins -->
+<div class="grid grid-cols-3 gap-3 mb-6">
+<button class="oauth-btn flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-warm-border hover:border-primary/40 transition-all shadow-sm" data-oauth-provider="Google" type="button">
+<svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+</svg>
+<span class="text-[13px] font-semibold text-on-surface hidden sm:inline">Google</span>
+</button>
+<button class="oauth-btn flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-warm-border hover:border-primary/40 transition-all shadow-sm" data-oauth-provider="GitHub" type="button">
+<svg class="w-4 h-4 fill-on-surface flex-shrink-0" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+</svg>
+<span class="text-[13px] font-semibold text-on-surface hidden sm:inline">GitHub</span>
+</button>
+<button class="oauth-btn flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-warm-border hover:border-primary/40 transition-all shadow-sm" data-oauth-provider="LinkedIn" type="button">
+<svg class="w-4 h-4 fill-[#0A66C2] flex-shrink-0" viewBox="0 0 24 24">
+<path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+</svg>
+<span class="text-[13px] font-semibold text-on-surface hidden sm:inline">LinkedIn</span>
+</button>
+</div>
+<!-- Separator -->
+<div class="relative flex items-center justify-center mb-6">
+<div class="w-full h-px bg-warm-border"></div>
+<span class="absolute px-3 bg-surface-container-lowest font-mono text-[11px] text-on-surface-variant uppercase tracking-wider">Or continue with email</span>
+</div>
+<!-- Form Elements -->
+<form class="space-y-4" id="signup-form" novalidate="">
+<!-- First Name -->
+<div class="flex flex-col gap-1.5">
+<label class="text-[13px] font-semibold text-on-surface flex items-center justify-between" for="first-name">
+<span class="">First Name</span>
+<span class="font-mono text-[11px] text-on-surface-variant font-normal">Required</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px] pointer-events-none">person</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-container-low/70 border border-warm-border text-on-surface placeholder:text-outline font-body text-[14px] outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" id="first-name" name="firstName" placeholder="e.g. Maya" required="" type="text">
+<span class="material-symbols-outlined absolute right-3 text-emerald-700 text-[18px] hidden" id="first-name-valid">check_circle</span>
+</div>
+</div>
+<!-- Email Address -->
+<div class="flex flex-col gap-1.5">
+<label class="text-[13px] font-semibold text-on-surface flex items-center justify-between" for="email-addr">
+<span class="">Work Email Address</span>
+<span class="font-mono text-[11px] text-on-surface-variant font-normal" id="email-uniqueness-indicator">Unique identifier</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px] pointer-events-none">alternate_email</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-container-low/70 border border-warm-border text-on-surface placeholder:text-outline font-body text-[14px] outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" id="email-addr" name="email" placeholder="alex@enterprise.com" required="" type="email">
+<div class="absolute right-3 hidden" id="email-spinner">
+<span class="material-symbols-outlined text-primary text-[18px] animate-spin">progress_activity</span>
+</div>
+<span class="material-symbols-outlined absolute right-3 text-emerald-700 text-[18px] hidden" id="email-valid-icon">check_circle</span>
+</div>
+<p class="font-mono text-[11px] text-error hidden items-center gap-1 mt-0.5" id="email-error-msg">
+<span class="material-symbols-outlined text-[13px]">error</span> Please enter a valid enterprise email format
+              </p>
+</div>
+<!-- Mobile Number with In-Input Verification -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="text-[13px] font-semibold text-on-surface" for="mobile-number">Mobile Phone Number</label>
+<!-- Verification Badges -->
+<div id="mobile-badge-container">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100/80 text-amber-800 border border-amber-300 font-mono text-[11px] font-medium" id="badge-not-verified">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span> Not verified
+                  </span>
+<span class="hidden inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/30 font-mono text-[11px] font-medium" id="badge-verifying">
+<span class="material-symbols-outlined text-[12px] animate-spin">refresh</span> Verifying
+                  </span>
+<span class="hidden inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 font-mono text-[11px] font-medium" id="badge-verified">
+<span class="material-symbols-outlined text-[12px]">verified</span> Verified ✓
+                  </span>
+</div>
+</div>
+<!-- Integrated Input Field Group -->
+<div class="relative flex items-center rounded-xl bg-surface-container-low/70 border border-warm-border focus-within:bg-white focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all p-1">
+<!-- Country selector toggle -->
+<div class="relative flex items-center pr-1.5">
+<button class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-mono text-[12.5px] transition-colors border border-warm-border/60" id="country-code-btn" type="button">
+<span id="selected-flag" class="">🇮🇳</span>
+<span id="selected-code" class="">+91</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</button>
+<!-- Country Dropdown Popover -->
+<div class="hidden absolute top-12 left-0 z-30 w-48 rounded-xl bg-surface-container-lowest border border-warm-border p-1.5 shadow-xl flex flex-col gap-0.5" id="country-dropdown">
+<button class="country-opt w-full flex items-center gap-2 px-3 py-1.5 rounded-lg text-left text-[13px] hover:bg-surface-container text-on-surface font-medium" data-country="+91" data-flag="🇮🇳" type="button">
+<span class="">🇮🇳</span> <span class="">India (+91)</span>
+</button>
+<button class="country-opt w-full flex items-center gap-2 px-3 py-1.5 rounded-lg text-left text-[13px] hover:bg-surface-container text-on-surface font-medium" data-country="+1" data-flag="🇺🇸" type="button">
+<span class="">🇺🇸</span> <span class="">USA (+1)</span>
+</button>
+<button class="country-opt w-full flex items-center gap-2 px-3 py-1.5 rounded-lg text-left text-[13px] hover:bg-surface-container text-on-surface font-medium" data-country="+44" data-flag="🇬🇧" type="button">
+<span class="">🇬🇧</span> <span class="">UK (+44)</span>
+</button>
+<button class="country-opt w-full flex items-center gap-2 px-3 py-1.5 rounded-lg text-left text-[13px] hover:bg-surface-container text-on-surface font-medium" data-country="+49" data-flag="🇩🇪" type="button">
+<span class="">🇩🇪</span> <span class="">Germany (+49)</span>
+</button>
+</div>
+</div>
+<!-- Input -->
+<input class="w-full bg-transparent px-2 text-on-surface placeholder:text-outline font-mono text-[13.5px] outline-none" id="mobile-number" maxlength="12" name="mobile" placeholder="98765 43210" type="tel">
+<!-- Action button inside field -->
+<button class="flex-shrink-0 flex items-center gap-1 px-3.5 py-1.5 mr-1 rounded-lg bg-primary hover:bg-[#b05822] text-white font-body text-[12px] font-semibold transition-all shadow-sm shadow-primary/20" id="btn-verify-mobile" type="button">
+<span class="">Verify Mobile</span>
+</button>
+</div>
+<p class="font-mono text-[11px] text-error hidden items-center gap-1" id="mobile-error-msg">
+<span class="material-symbols-outlined text-[13px]">info</span> Enter a valid 10-digit mobile number
+              </p>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-[13px] font-semibold text-on-surface" for="password-input">Security Password</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px] pointer-events-none">lock</span>
+<input class="w-full h-11 pl-10 pr-11 rounded-xl bg-surface-container-low/70 border border-warm-border text-on-surface placeholder:text-outline font-body text-[14px] outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" id="password-input" name="password" placeholder="Create strong passphrase" required="" type="password">
+<button aria-label="Toggle password visibility" class="absolute right-3 text-on-surface-variant hover:text-on-surface transition-colors p-1" id="toggle-password" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+<!-- Password Strength Bar -->
+<div class="flex flex-col gap-1.5 mt-1">
+<div class="flex items-center justify-between font-mono text-[11px]">
+<span class="text-on-surface-variant">Complexity score:</span>
+<span class="text-error font-medium" id="strength-label">None</span>
+</div>
+<div class="grid grid-cols-4 gap-1.5 w-full h-1.5 bg-surface-container rounded-full overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-surface-dim transition-colors duration-300" id="bar-1"></div>
+<div class="h-full rounded-full bg-surface-dim transition-colors duration-300" id="bar-2"></div>
+<div class="h-full rounded-full bg-surface-dim transition-colors duration-300" id="bar-3"></div>
+<div class="h-full rounded-full bg-surface-dim transition-colors duration-300" id="bar-4"></div>
+</div>
+</div>
+<!-- Password Requirements Dynamic Checklist -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-2 bg-surface-container-low/60 border border-warm-border/60 rounded-xl p-3">
+<div class="flex items-center gap-1.5 font-mono text-[11px] text-on-surface-variant transition-colors" id="req-min">
+<span class="material-symbols-outlined text-[14px]">circle</span>
+<span class="">8+ characters</span>
+</div>
+<div class="flex items-center gap-1.5 font-mono text-[11px] text-on-surface-variant transition-colors" id="req-upper">
+<span class="material-symbols-outlined text-[14px]">circle</span>
+<span class="">1+ uppercase letter</span>
+</div>
+<div class="flex items-center gap-1.5 font-mono text-[11px] text-on-surface-variant transition-colors" id="req-lower">
+<span class="material-symbols-outlined text-[14px]">circle</span>
+<span class="">1+ lowercase letter</span>
+</div>
+<div class="flex items-center gap-1.5 font-mono text-[11px] text-on-surface-variant transition-colors" id="req-num">
+<span class="material-symbols-outlined text-[14px]">circle</span>
+<span class="">1+ numerical digit</span>
+</div>
+<div class="flex items-center gap-1.5 font-mono text-[11px] text-on-surface-variant transition-colors col-span-1 sm:col-span-2" id="req-special">
+<span class="material-symbols-outlined text-[14px]">circle</span>
+<span class="">1+ special character (!@#$%^&amp;*)</span>
+</div>
+</div>
+</div>
+<!-- Confirm Password Field -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="text-[13px] font-semibold text-on-surface" for="confirm-password-input">Confirm Password</label>
+<span class="font-mono text-[11px] text-on-surface-variant hidden" id="match-status">Passwords match ✓</span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px] pointer-events-none">enhanced_encryption</span>
+<input class="w-full h-11 pl-10 pr-11 rounded-xl bg-surface-container-low/70 border border-warm-border text-on-surface placeholder:text-outline font-body text-[14px] outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" id="confirm-password-input" placeholder="Repeat your passphrase" required="" type="password">
+<span class="material-symbols-outlined absolute right-3 text-emerald-700 text-[18px] hidden" id="confirm-check">check_circle</span>
+</div>
+</div>
+<!-- Terms & Privacy -->
+<div class="pt-2 flex items-start gap-3">
+<label class="relative flex items-center mt-0.5 cursor-pointer">
+<input class="peer sr-only" id="terms-agree" type="checkbox">
+<div class="w-4 h-4 rounded bg-surface-container-low border border-warm-border peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-white text-[14px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</label>
+<label class="text-[12.5px] text-on-surface-variant select-none cursor-pointer leading-relaxed" for="terms-agree">I agree to the <a class="text-primary font-semibold hover:underline" href="#">Terms of Service</a>, <a class="text-primary font-semibold hover:underline" href="#">Privacy Policy</a>, and data processing terms.</label>
+</div>
+<!-- Primary Submit CTA Button -->
+<div class="pt-3">
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-[#b05822] text-white disabled:opacity-40 disabled:pointer-events-none font-semibold text-[15px] tracking-wide transition-all shadow-lg shadow-primary/25 flex items-center justify-center gap-2 hover:shadow-primary/35 hover:-translate-y-0.5" disabled="" id="btn-create-account" type="submit">
+<span id="btn-text" class="">Create Account</span>
+<span class="material-symbols-outlined text-[20px] animate-spin hidden" id="btn-spinner">progress_activity</span>
+</button>
+<p class="font-mono text-[11px] text-on-surface-variant text-center mt-2.5" id="submit-hint">
+                * Please complete all valid credentials and verify mobile to unlock.
+              </p>
+</div>
+</form>
+<!-- Bottom Login Redirect -->
+<div class="mt-8 text-center pt-5 border-t border-warm-border">
+<p class="text-[13.5px] text-on-surface-variant">
+              Already have an account?
+              <button class="text-primary hover:text-warm-amber font-semibold underline-offset-4 hover:underline ml-1" data-switch-view="login" type="button">
+                Log in
+              </button>
+</p>
+</div>
+</section>
+<!-- VIEW 2: LOGIN SCREEN -->
+<section class="auth-view hidden flex-col" id="view-login">
+<div class="flex flex-col items-center text-center mb-8">
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#faede1] to-[#f5d9be] border border-[#f0cbb0] flex items-center justify-center p-3 mb-3.5 shadow-sm text-primary">
+<span class="material-symbols-outlined text-[32px]">shield_person</span>
+</div>
+<h2 class="font-headline font-semibold text-3xl sm:text-4xl text-on-surface tracking-tight">Welcome back</h2>
+<p class="font-body text-[14px] text-on-surface-variant mt-1.5">Sign in to your secure workspace</p>
+</div>
+<form class="space-y-4" id="login-form">
+<div class="flex flex-col gap-1.5">
+<label class="text-[13px] font-semibold text-on-surface">Email or Corporate Username</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px]">badge</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-low/70 border border-warm-border text-on-surface placeholder:text-outline font-body text-[14px] outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" placeholder="alex@enterprise.com" required="" type="email">
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="text-[13px] font-semibold text-on-surface">Master Passphrase</label>
+<button class="font-mono text-[11px] text-primary hover:underline" data-switch-view="forgot" type="button">Forgot password?</button>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px]">lock</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-low/70 border border-warm-border text-on-surface placeholder:text-outline font-body text-[14px] outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" placeholder="••••••••••••" required="" type="password">
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-[#b05822] text-white font-semibold text-[15px] tracking-wide transition-all shadow-lg shadow-primary/25 flex items-center justify-center gap-2 hover:-translate-y-0.5" type="submit"><span class="">Sign In</span></button>
+</div>
+</form>
+<div class="mt-8 text-center pt-5 border-t border-warm-border">
+<p class="text-[13.5px] text-on-surface-variant">
+              Don't have an account?
+              <button class="text-primary hover:text-warm-amber font-semibold hover:underline ml-1" data-switch-view="signup" type="button">
+                Sign up
+              </button>
+</p>
+</div>
+</section>
+<!-- VIEW 3: FORGOT PASSWORD -->
+<section class="auth-view hidden flex-col" id="view-forgot">
+<div class="flex flex-col items-center text-center mb-6">
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#faede1] to-[#f5d9be] border border-[#f0cbb0] flex items-center justify-center mb-3 text-primary">
+<span class="material-symbols-outlined text-[28px]">lock_reset</span>
+</div>
+<h2 class="font-headline font-semibold text-2xl sm:text-3xl text-on-surface">Reset your password</h2>
+<p class="text-[13.5px] text-on-surface-variant mt-1 max-w-sm">We'll dispatch a cryptographic authorization link to your verified address.</p>
+</div>
+<form class="space-y-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-[13px] font-semibold text-on-surface">Registered Corporate Email</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px]">mail</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-low/70 border border-warm-border text-on-surface placeholder:text-outline font-body text-[14px] outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" placeholder="alex@enterprise.com" required="" type="email">
+</div>
+</div>
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-[#b05822] text-white font-semibold text-[15px] tracking-wide transition-all shadow-md shadow-primary/20 mt-2" data-switch-view="reset" type="button">
+              Send Reset Instructions
+            </button>
+<div class="text-center pt-3">
+<button class="font-mono text-[12px] text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-1 mx-auto" data-switch-view="login" type="button">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span> Return to login
+              </button>
+</div>
+</form>
+</section>
+<!-- VIEW 4: RESET PASSWORD -->
+<section class="auth-view hidden flex-col" id="view-reset">
+<div class="flex flex-col items-center text-center mb-6">
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#faede1] to-[#f5d9be] border border-[#f0cbb0] flex items-center justify-center mb-3 text-primary">
+<span class="material-symbols-outlined text-[28px]">vpn_key</span>
+</div>
+<h2 class="font-headline font-semibold text-2xl sm:text-3xl text-on-surface">Create New Passphrase</h2>
+<p class="text-[13.5px] text-on-surface-variant mt-1">Set a fresh cryptographic key for your profile.</p>
+</div>
+<form class="space-y-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-[13px] font-semibold text-on-surface">New Password</label>
+<input class="w-full h-11 px-4 rounded-xl bg-surface-container-low/70 border border-warm-border text-on-surface placeholder:text-outline font-body text-[14px] outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" placeholder="At least 8 characters" required="" type="password">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-[13px] font-semibold text-on-surface">Confirm New Password</label>
+<input class="w-full h-11 px-4 rounded-xl bg-surface-container-low/70 border border-warm-border text-on-surface placeholder:text-outline font-body text-[14px] outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" placeholder="Repeat new password" required="" type="password">
+</div>
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-[#b05822] text-white font-semibold text-[15px] tracking-wide transition-all shadow-md shadow-primary/20 mt-2" data-switch-view="login" type="button">
+              Update Passphrase &amp; Sign In
+            </button>
+</form>
+</section>
+<!-- Bottom Trust Cues -->
+<div class="mt-8 pt-4 border-t border-warm-border flex flex-wrap items-center justify-center gap-4 text-on-surface-variant font-mono text-[11px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">lock</span> FIPS 140-2 Compliant</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-warm-amber">security</span> WebAuthn Ready</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">database</span> Zero-Knowledge Auth</span>
+</div>
+</div>
+</div>
+<!-- OTP Verification Modal Layer -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/40 backdrop-blur-md transition-all duration-300 opacity-0 pointer-events-none" id="otp-modal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-3xl shadow-2xl border border-warm-border p-6 sm:p-8 relative overflow-hidden">
+<!-- Glow Line -->
+<div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-warm-amber to-warm-gold"></div>
+<!-- Close Button -->
+<button aria-label="Close OTP Modal" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" id="close-otp-modal" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<!-- Header -->
+<div class="flex flex-col items-center text-center mb-6">
+<div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3 text-primary">
+<span class="material-symbols-outlined text-[26px]">sms</span>
+</div>
+<h3 class="font-headline font-bold text-2xl text-on-surface tracking-tight">Verify your mobile number</h3>
+<p class="font-body text-[13.5px] text-on-surface-variant mt-1.5">
+            Enter the 6-digit code sent to <span class="font-mono text-on-surface font-semibold" id="otp-target-phone">+91 98765 43210</span>
+<button class="text-primary hover:underline ml-1 font-mono font-medium" id="edit-phone-link" type="button">(Edit)</button>
+</p>
+</div>
+<!-- Simulated QA / Demo Pills -->
+<div class="bg-surface-container-low rounded-xl p-3 mb-5 border border-warm-border/60 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-[11px] font-mono text-on-surface-variant">
+<span class="">Simulate Telemetry Test:</span>
+<span class="text-primary font-medium">Quick Fill</span>
+</div>
+<div class="grid grid-cols-3 gap-1.5">
+<button class="py-1 px-2 rounded-lg bg-white hover:bg-surface-container-high border border-warm-border font-mono text-[11px] text-emerald-800 font-medium transition-colors" id="btn-sim-valid" type="button">
+              Valid (123456)
+            </button>
+<button class="py-1 px-2 rounded-lg bg-white hover:bg-surface-container-high border border-warm-border font-mono text-[11px] text-error font-medium transition-colors" id="btn-sim-invalid" type="button">
+              Incorrect
+            </button>
+<button class="py-1 px-2 rounded-lg bg-white hover:bg-surface-container-high border border-warm-border font-mono text-[11px] text-amber-800 font-medium transition-colors" id="btn-sim-expired" type="button">
+              Expired
+            </button>
+</div>
+</div>
+<!-- 6-digit OTP Inputs Box Grid -->
+<div class="flex items-center justify-between gap-1.5 sm:gap-2 mb-4" id="otp-inputs-group">
+<input class="otp-cell w-11 sm:w-12 h-14 rounded-xl bg-surface-container-low border border-warm-border text-center font-mono text-xl font-bold text-on-surface outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" inputmode="numeric" maxlength="1" type="text">
+<input class="otp-cell w-11 sm:w-12 h-14 rounded-xl bg-surface-container-low border border-warm-border text-center font-mono text-xl font-bold text-on-surface outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" inputmode="numeric" maxlength="1" type="text">
+<input class="otp-cell w-11 sm:w-12 h-14 rounded-xl bg-surface-container-low border border-warm-border text-center font-mono text-xl font-bold text-on-surface outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" inputmode="numeric" maxlength="1" type="text">
+<input class="otp-cell w-11 sm:w-12 h-14 rounded-xl bg-surface-container-low border border-warm-border text-center font-mono text-xl font-bold text-on-surface outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" inputmode="numeric" maxlength="1" type="text">
+<input class="otp-cell w-11 sm:w-12 h-14 rounded-xl bg-surface-container-low border border-warm-border text-center font-mono text-xl font-bold text-on-surface outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" inputmode="numeric" maxlength="1" type="text">
+<input class="otp-cell w-11 sm:w-12 h-14 rounded-xl bg-surface-container-low border border-warm-border text-center font-mono text-xl font-bold text-on-surface outline-none focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-inner" inputmode="numeric" maxlength="1" type="text">
+</div>
+<!-- OTP Error Alert Box -->
+<div class="hidden items-center gap-2 p-3 rounded-xl bg-error-container text-on-error-container font-mono text-[12px] mb-4 border border-red-200" id="otp-error-banner">
+<span class="material-symbols-outlined text-[18px]">error</span>
+<span id="otp-error-text" class="">Invalid code entered. Please recheck SMS message.</span>
+</div>
+<!-- Verify Action Button -->
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-[#b05822] text-white font-semibold text-[15px] tracking-wide transition-all shadow-lg shadow-primary/25 flex items-center justify-center gap-2" id="btn-verify-otp-submit" type="button">
+<span id="otp-submit-text" class="">Verify Code</span>
+<span class="material-symbols-outlined text-[20px] animate-spin hidden" id="otp-submit-spinner">progress_activity</span>
+</button>
+<!-- Countdown / Resend Option -->
+<div class="mt-4 flex items-center justify-between font-mono text-[12px] text-on-surface-variant">
+<span id="otp-timer-display" class="">Resend code in <strong class="text-on-surface font-semibold" id="otp-timer-count">00:45</strong></span>
+<button class="text-primary disabled:opacity-40 disabled:pointer-events-none hover:underline font-semibold" disabled="" id="btn-resend-otp" type="button">
+            Resend OTP
+          </button>
+</div>
+</div>
+</div>
+<!-- OAuth Simulated Handshake Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/40 backdrop-blur-md transition-all duration-200 opacity-0 pointer-events-none" id="oauth-modal">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-3xl border border-warm-border shadow-2xl p-7 text-center flex flex-col items-center">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 text-primary">
+<span class="material-symbols-outlined text-[32px] animate-pulse" id="oauth-provider-icon">lock_open</span>
+</div>
+<h3 class="font-headline font-bold text-xl text-on-surface" id="oauth-status-title">Connecting to Provider</h3>
+<p class="text-[13px] text-on-surface-variant mt-2" id="oauth-status-sub">Negotiating identity handshake via TLS 1.3 protocol...</p>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-6">
+<div class="h-full bg-primary w-1/4 transition-all duration-500" id="oauth-progress"></div>
+</div>
+</div>
+</div>
+<!-- Global Success Notification Toast -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 bg-surface-container-lowest border border-warm-border text-on-surface px-5 py-3.5 rounded-2xl shadow-2xl" id="toast-success">
+<span class="material-symbols-outlined text-emerald-700 text-[24px]">check_circle</span>
+<div class="flex flex-col">
+<span class="font-semibold text-[13.5px] text-on-surface" id="toast-title">Success</span>
+<span class="font-mono text-[11.5px] text-on-surface-variant" id="toast-subtitle">Action confirmed cryptographically</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low/80 border-t border-warm-border py-6">
+<div class="w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[12.5px] text-on-surface-variant">
+<div class="">© 2025 All rights reserved.</div>
+<div class="flex flex-wrap items-center gap-6">
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Security Documentation</a>
+<a class="hover:text-primary transition-colors" href="#">Trust Center</a>
+
+</div>
+</div>
+</footer>
+<script>
+    (function initSaharaAuthEngine() {
+      const state = {
+        firstNameValid: false,
+        emailValid: false,
+        mobileEntered: false,
+        mobileVerified: false,
+        passwordStrength: 0,
+        passwordsMatch: false,
+        termsAgreed: false,
+        selectedCountryCode: '+91',
+        otpTimerSeconds: 45,
+        otpTimerInterval: null
+      };
+
+      const views = {
+        signup: document.getElementById('view-signup'),
+        login: document.getElementById('view-login'),
+        forgot: document.getElementById('view-forgot'),
+        reset: document.getElementById('view-reset')
+      };
+
+      const viewTabBtns = document.querySelectorAll('.view-tab-btn[data-switch-view]');
+      const globalViewSwitches = document.querySelectorAll('[data-switch-view]');
+
+      const firstNameInput = document.getElementById('first-name');
+      const firstNameValidIcon = document.getElementById('first-name-valid');
+      
+      const emailInput = document.getElementById('email-addr');
+      const emailValidIcon = document.getElementById('email-valid-icon');
+      const emailSpinner = document.getElementById('email-spinner');
+      const emailErrorMsg = document.getElementById('email-error-msg');
+      const emailUniquenessLabel = document.getElementById('email-uniqueness-indicator');
+
+      const countryCodeBtn = document.getElementById('country-code-btn');
+      const countryDropdown = document.getElementById('country-dropdown');
+      const selectedFlag = document.getElementById('selected-flag');
+      const selectedCode = document.getElementById('selected-code');
+      const countryOpts = document.querySelectorAll('.country-opt');
+
+      const mobileInput = document.getElementById('mobile-number');
+      const mobileErrorMsg = document.getElementById('mobile-error-msg');
+      const btnVerifyMobile = document.getElementById('btn-verify-mobile');
+      const badgeNotVerified = document.getElementById('badge-not-verified');
+      const badgeVerifying = document.getElementById('badge-verifying');
+      const badgeVerified = document.getElementById('badge-verified');
+
+      const passwordInput = document.getElementById('password-input');
+      const togglePasswordBtn = document.getElementById('toggle-password');
+      const confirmPasswordInput = document.getElementById('confirm-password-input');
+      const matchStatus = document.getElementById('match-status');
+      const confirmCheck = document.getElementById('confirm-check');
+      const strengthLabel = document.getElementById('strength-label');
+      const strengthBars = [
+        document.getElementById('bar-1'),
+        document.getElementById('bar-2'),
+        document.getElementById('bar-3'),
+        document.getElementById('bar-4')
+      ];
+
+      const reqMin = document.getElementById('req-min');
+      const reqUpper = document.getElementById('req-upper');
+      const reqLower = document.getElementById('req-lower');
+      const reqNum = document.getElementById('req-num');
+      const reqSpecial = document.getElementById('req-special');
+
+      const termsCheckbox = document.getElementById('terms-agree');
+      const btnCreateAccount = document.getElementById('btn-create-account');
+      const btnText = document.getElementById('btn-text');
+      const btnSpinner = document.getElementById('btn-spinner');
+      const submitHint = document.getElementById('submit-hint');
+
+      // OTP Elements
+      const otpModal = document.getElementById('otp-modal');
+      const triggerOtpDirect = document.getElementById('trigger-otp-direct');
+      const closeOtpModal = document.getElementById('close-otp-modal');
+      const otpTargetPhone = document.getElementById('otp-target-phone');
+      const editPhoneLink = document.getElementById('edit-phone-link');
+      const otpCells = Array.from(document.querySelectorAll('.otp-cell'));
+      const btnVerifyOtpSubmit = document.getElementById('btn-verify-otp-submit');
+      const otpSubmitText = document.getElementById('otp-submit-text');
+      const otpSubmitSpinner = document.getElementById('otp-submit-spinner');
+      const otpErrorBanner = document.getElementById('otp-error-banner');
+      const otpErrorText = document.getElementById('otp-error-text');
+      const otpTimerDisplay = document.getElementById('otp-timer-display');
+      const otpTimerCount = document.getElementById('otp-timer-count');
+      const btnResendOtp = document.getElementById('btn-resend-otp');
+
+      // QA Simulators
+      const btnSimValid = document.getElementById('btn-sim-valid');
+      const btnSimInvalid = document.getElementById('btn-sim-invalid');
+      const btnSimExpired = document.getElementById('btn-sim-expired');
+
+      // OAuth
+      const oauthButtons = document.querySelectorAll('.oauth-btn');
+      const oauthModal = document.getElementById('oauth-modal');
+      const oauthStatusTitle = document.getElementById('oauth-status-title');
+      const oauthStatusSub = document.getElementById('oauth-status-sub');
+      const oauthProgress = document.getElementById('oauth-progress');
+
+      // Toast
+      const toast = document.getElementById('toast-success');
+      const toastTitle = document.getElementById('toast-title');
+      const toastSubtitle = document.getElementById('toast-subtitle');
+
+      function showToast(title, subtitle) {
+        toastTitle.textContent = title;
+        toastSubtitle.textContent = subtitle;
+        toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+          toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        }, 3500);
+      }
+
+      function switchView(target) {
+        Object.keys(views).forEach(key => {
+          if (views[key]) {
+            views[key].classList.add('hidden');
+            views[key].classList.remove('flex');
+          }
+        });
+        if (views[target]) {
+          views[target].classList.remove('hidden');
+          views[target].classList.add('flex');
+        }
+        viewTabBtns.forEach(btn => {
+          if (btn.getAttribute('data-switch-view') === target) {
+            btn.classList.add('bg-primary', 'text-white');
+            btn.classList.remove('text-on-surface-variant');
+          } else {
+            btn.classList.remove('bg-primary', 'text-white');
+            btn.classList.add('text-on-surface-variant');
+          }
+        });
+      }
+
+      globalViewSwitches.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = btn.getAttribute('data-switch-view');
+          if (target) switchView(target);
+        });
+      });
+
+      // First Name
+      firstNameInput.addEventListener('input', () => {
+        const val = firstNameInput.value.trim();
+        state.firstNameValid = val.length >= 2;
+        if (state.firstNameValid) {
+          firstNameValidIcon.classList.remove('hidden');
+        } else {
+          firstNameValidIcon.classList.add('hidden');
+        }
+        evaluateSubmitReadiness();
+      });
+
+      // Email with Debounce
+      let emailDebounceTimer = null;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+      emailInput.addEventListener('input', () => {
+        clearTimeout(emailDebounceTimer);
+        const val = emailInput.value.trim();
+        
+        if (!val) {
+          emailValidIcon.classList.add('hidden');
+          emailSpinner.classList.add('hidden');
+          emailErrorMsg.classList.add('hidden');
+          emailUniquenessLabel.textContent = 'Unique identifier';
+          emailUniquenessLabel.className = 'font-mono text-[11px] text-on-surface-variant font-normal';
+          state.emailValid = false;
+          evaluateSubmitReadiness();
+          return;
+        }
+
+        if (!emailRegex.test(val)) {
+          emailErrorMsg.classList.remove('hidden');
+          emailValidIcon.classList.add('hidden');
+          emailSpinner.classList.add('hidden');
+          state.emailValid = false;
+          evaluateSubmitReadiness();
+          return;
+        }
+
+        emailErrorMsg.classList.add('hidden');
+        emailSpinner.classList.remove('hidden');
+        emailValidIcon.classList.add('hidden');
+        emailUniquenessLabel.textContent = 'Verifying identity pool...';
+
+        emailDebounceTimer = setTimeout(() => {
+          emailSpinner.classList.add('hidden');
+          if (val.toLowerCase().includes('taken')) {
+            emailErrorMsg.textContent = 'Email already provisioned in directory';
+            emailErrorMsg.classList.remove('hidden');
+            emailValidIcon.classList.add('hidden');
+            emailUniquenessLabel.textContent = 'Already in use';
+            emailUniquenessLabel.className = 'font-mono text-[11px] text-error font-medium';
+            state.emailValid = false;
+          } else {
+            emailErrorMsg.classList.add('hidden');
+            emailValidIcon.classList.remove('hidden');
+            emailUniquenessLabel.textContent = 'Verified available ✓';
+            emailUniquenessLabel.className = 'font-mono text-[11px] text-emerald-800 font-medium';
+            state.emailValid = true;
+          }
+          evaluateSubmitReadiness();
+        }, 450);
+      });
+
+      // Country selector
+      countryCodeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        countryDropdown.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', () => {
+        countryDropdown.classList.add('hidden');
+      });
+
+      countryOpts.forEach(opt => {
+        opt.addEventListener('click', () => {
+          const country = opt.getAttribute('data-country');
+          const flag = opt.getAttribute('data-flag');
+          state.selectedCountryCode = country;
+          selectedCode.textContent = country;
+          selectedFlag.textContent = flag;
+          countryDropdown.classList.add('hidden');
+        });
+      });
+
+      // Mobile formatting
+      mobileInput.addEventListener('input', (e) => {
+        let cleaned = e.target.value.replace(/\D/g, '');
+        if (cleaned.length > 10) cleaned = cleaned.slice(0, 10);
+        
+        if (cleaned.length > 5) {
+          e.target.value = cleaned.slice(0, 5) + ' ' + cleaned.slice(5);
+        } else {
+          e.target.value = cleaned;
+        }
+
+        state.mobileEntered = cleaned.length >= 10;
+        if (state.mobileEntered) {
+          mobileErrorMsg.classList.add('hidden');
+        }
+
+        if (state.mobileVerified) {
+          state.mobileVerified = false;
+          badgeVerified.classList.add('hidden');
+          badgeNotVerified.classList.remove('hidden');
+          btnVerifyMobile.classList.remove('hidden');
+          evaluateSubmitReadiness();
+        }
+      });
+
+      btnVerifyMobile.addEventListener('click', () => {
+        const rawNumber = mobileInput.value.replace(/\D/g, '');
+        if (rawNumber.length < 10) {
+          mobileErrorMsg.classList.remove('hidden');
+          mobileInput.focus();
+          return;
+        }
+        openOtpModal(state.selectedCountryCode + ' ' + mobileInput.value);
+      });
+
+      // Password toggle
+      togglePasswordBtn.addEventListener('click', () => {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+        togglePasswordBtn.innerHTML = isPassword 
+          ? '<span class="material-symbols-outlined text-[20px] text-primary">visibility_off</span>' 
+          : '<span class="material-symbols-outlined text-[20px]">visibility</span>';
+      });
+
+      function checkCriteria(el, condition) {
+        if (condition) {
+          el.classList.remove('text-on-surface-variant');
+          el.classList.add('text-emerald-800');
+          el.querySelector('.material-symbols-outlined').textContent = 'check_circle';
+        } else {
+          el.classList.remove('text-emerald-800');
+          el.classList.add('text-on-surface-variant');
+          el.querySelector('.material-symbols-outlined').textContent = 'circle';
+        }
+      }
+
+      passwordInput.addEventListener('input', () => {
+        const pwd = passwordInput.value;
+        const hasMin = pwd.length >= 8;
+        const hasUpper = /[A-Z]/.test(pwd);
+        const hasLower = /[a-z]/.test(pwd);
+        const hasNum = /[0-9]/.test(pwd);
+        const hasSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pwd);
+
+        checkCriteria(reqMin, hasMin);
+        checkCriteria(reqUpper, hasUpper);
+        checkCriteria(reqLower, hasLower);
+        checkCriteria(reqNum, hasNum);
+        checkCriteria(reqSpecial, hasSpecial);
+
+        const score = [hasMin, hasUpper, hasLower, hasNum, hasSpecial].filter(Boolean).length;
+        state.passwordStrength = score;
+
+        strengthBars.forEach(b => {
+          b.className = 'h-full rounded-full bg-surface-dim transition-colors duration-300';
+        });
+
+        if (score === 0) {
+          strengthLabel.textContent = 'None';
+          strengthLabel.className = 'font-mono text-[11px] text-error font-medium';
+        } else if (score <= 2) {
+          strengthLabel.textContent = 'Weak';
+          strengthLabel.className = 'font-mono text-[11px] text-error font-medium';
+          strengthBars[0].classList.replace('bg-surface-dim', 'bg-error');
+        } else if (score === 3) {
+          strengthLabel.textContent = 'Fair';
+          strengthLabel.className = 'font-mono text-[11px] text-amber-700 font-medium';
+          strengthBars[0].classList.replace('bg-surface-dim', 'bg-amber-600');
+          strengthBars[1].classList.replace('bg-surface-dim', 'bg-amber-600');
+        } else if (score === 4) {
+          strengthLabel.textContent = 'Good';
+          strengthLabel.className = 'font-mono text-[11px] text-primary font-medium';
+          strengthBars[0].classList.replace('bg-surface-dim', 'bg-primary');
+          strengthBars[1].classList.replace('bg-surface-dim', 'bg-primary');
+          strengthBars[2].classList.replace('bg-surface-dim', 'bg-primary');
+        } else if (score === 5) {
+          strengthLabel.textContent = 'Cryptographically Strong';
+          strengthLabel.className = 'font-mono text-[11px] text-emerald-800 font-semibold';
+          strengthBars.forEach(b => b.classList.replace('bg-surface-dim', 'bg-emerald-700'));
+        }
+
+        evaluateConfirmPassword();
+        evaluateSubmitReadiness();
+      });
+
+      function evaluateConfirmPassword() {
+        const pwd = passwordInput.value;
+        const confirmVal = confirmPasswordInput.value;
+        
+        if (!confirmVal) {
+          matchStatus.classList.add('hidden');
+          confirmCheck.classList.add('hidden');
+          state.passwordsMatch = false;
+          return;
+        }
+
+        if (pwd === confirmVal && pwd.length >= 8) {
+          matchStatus.textContent = 'Passwords match ✓';
+          matchStatus.className = 'font-mono text-[11px] text-emerald-800 font-medium';
+          matchStatus.classList.remove('hidden');
+          confirmCheck.classList.remove('hidden');
+          confirmCheck.classList.replace('text-error', 'text-emerald-700');
+          confirmCheck.textContent = 'check_circle';
+          state.passwordsMatch = true;
+        } else {
+          matchStatus.textContent = 'Passwords do not match';
+          matchStatus.className = 'font-mono text-[11px] text-error font-medium';
+          matchStatus.classList.remove('hidden');
+          confirmCheck.classList.remove('hidden');
+          confirmCheck.classList.replace('text-emerald-700', 'text-error');
+          confirmCheck.textContent = 'cancel';
+          state.passwordsMatch = false;
+        }
+      }
+
+      confirmPasswordInput.addEventListener('input', () => {
+        evaluateConfirmPassword();
+        evaluateSubmitReadiness();
+      });
+
+      termsCheckbox.addEventListener('change', () => {
+        state.termsAgreed = termsCheckbox.checked;
+        evaluateSubmitReadiness();
+      });
+
+      function evaluateSubmitReadiness() {
+        const isReady = (
+          state.firstNameValid &&
+          state.emailValid &&
+          state.mobileVerified &&
+          state.passwordStrength >= 4 &&
+          state.passwordsMatch &&
+          state.termsAgreed
+        );
+
+        btnCreateAccount.disabled = !isReady;
+        if (isReady) {
+          submitHint.textContent = 'All requirements satisfied. Ready to provision.';
+          submitHint.className = 'font-mono text-[11px] text-emerald-800 font-medium text-center mt-2.5';
+        } else {
+          submitHint.textContent = '* Please complete all valid credentials and verify mobile to unlock.';
+          submitHint.className = 'font-mono text-[11px] text-on-surface-variant text-center mt-2.5';
+        }
+      }
+
+      // Sign Up Submit
+      document.getElementById('signup-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (btnCreateAccount.disabled) return;
+
+        btnText.classList.add('hidden');
+        btnSpinner.classList.remove('hidden');
+        btnCreateAccount.disabled = true;
+
+        setTimeout(() => {
+          btnText.classList.remove('hidden');
+          btnSpinner.classList.add('hidden');
+          showToast('Sahara Account Initialized', 'Welcome to the warm security ecosystem.');
+          setTimeout(() => {
+            switchView('login');
+          }, 1200);
+        }, 1500);
+      });
+
+      // OTP Modal
+      function openOtpModal(phoneFormatted) {
+        otpTargetPhone.textContent = phoneFormatted || (state.selectedCountryCode + ' ' + (mobileInput.value || '98765 43210'));
+        otpModal.classList.remove('opacity-0', 'pointer-events-none');
+        otpErrorBanner.classList.add('hidden');
+        clearOtpCells();
+        startOtpTimer();
+        setTimeout(() => {
+          otpCells[0].focus();
+        }, 100);
+      }
+
+      function closeOtp() {
+        otpModal.classList.add('opacity-0', 'pointer-events-none');
+        clearInterval(state.otpTimerInterval);
+      }
+
+      triggerOtpDirect.addEventListener('click', () => {
+        openOtpModal();
+      });
+
+      closeOtpModal.addEventListener('click', closeOtp);
+      editPhoneLink.addEventListener('click', () => {
+        closeOtp();
+        mobileInput.focus();
+      });
+
+      function clearOtpCells() {
+        otpCells.forEach(cell => cell.value = '');
+      }
+
+      otpCells.forEach((cell, idx) => {
+        cell.addEventListener('input', (e) => {
+          const val = e.target.value.replace(/\D/g, '');
+          cell.value = val ? val[0] : '';
+          if (cell.value && idx < otpCells.length - 1) {
+            otpCells[idx + 1].focus();
+          }
+        });
+
+        cell.addEventListener('keydown', (e) => {
+          if (e.key === 'Backspace' && !cell.value && idx > 0) {
+            otpCells[idx - 1].focus();
+          }
+        });
+
+        cell.addEventListener('paste', (e) => {
+          e.preventDefault();
+          const clipboard = (e.clipboardData || window.clipboardData).getData('text');
+          const digits = clipboard.replace(/\D/g, '').slice(0, 6).split('');
+          digits.forEach((digit, i) => {
+            if (otpCells[i]) otpCells[i].value = digit;
+          });
+          const targetFocusIndex = Math.min(digits.length, otpCells.length - 1);
+          otpCells[targetFocusIndex].focus();
+        });
+      });
+
+      function startOtpTimer() {
+        clearInterval(state.otpTimerInterval);
+        state.otpTimerSeconds = 45;
+        btnResendOtp.disabled = true;
+        otpTimerDisplay.classList.remove('opacity-40');
+        
+        const updateTimerUI = () => {
+          const mm = String(Math.floor(state.otpTimerSeconds / 60)).padStart(2, '0');
+          const ss = String(state.otpTimerSeconds % 60).padStart(2, '0');
+          otpTimerCount.textContent = `${mm}:${ss}`;
+        };
+
+        updateTimerUI();
+
+        state.otpTimerInterval = setInterval(() => {
+          state.otpTimerSeconds--;
+          if (state.otpTimerSeconds <= 0) {
+            clearInterval(state.otpTimerInterval);
+            btnResendOtp.disabled = false;
+            otpTimerCount.textContent = '00:00';
+            otpTimerDisplay.classList.add('opacity-40');
+          } else {
+            updateTimerUI();
+          }
+        }, 1000);
+      }
+
+      btnResendOtp.addEventListener('click', () => {
+        clearOtpCells();
+        otpErrorBanner.classList.add('hidden');
+        startOtpTimer();
+        showToast('New Code Sent', 'Cryptographic OTP dispatched via SMS routing.');
+      });
+
+      btnVerifyOtpSubmit.addEventListener('click', () => {
+        const code = otpCells.map(c => c.value).join('');
+        if (code.length < 6) {
+          otpErrorText.textContent = 'Please enter complete 6-digit verification code.';
+          otpErrorBanner.classList.remove('hidden');
+          return;
+        }
+        executeVerification(code);
+      });
+
+      function executeVerification(code) {
+        otpSubmitText.classList.add('hidden');
+        otpSubmitSpinner.classList.remove('hidden');
+        btnVerifyOtpSubmit.disabled = true;
+        otpErrorBanner.classList.add('hidden');
+
+        setTimeout(() => {
+          otpSubmitText.classList.remove('hidden');
+          otpSubmitSpinner.classList.add('hidden');
+          btnVerifyOtpSubmit.disabled = false;
+
+          if (code === '123456') {
+            closeOtp();
+            state.mobileVerified = true;
+            badgeNotVerified.classList.add('hidden');
+            badgeVerifying.classList.add('hidden');
+            badgeVerified.classList.remove('hidden');
+            btnVerifyMobile.classList.add('hidden');
+            showToast('Mobile Number Verified ✓', 'Sahara hardware token confirmed.');
+            evaluateSubmitReadiness();
+          } else if (code === '000000') {
+            otpErrorText.textContent = 'OTP token has expired. Request a new token.';
+            otpErrorBanner.classList.remove('hidden');
+          } else {
+            otpErrorText.textContent = 'Invalid OTP code. Please check your SMS and retry.';
+            otpErrorBanner.classList.remove('hidden');
+          }
+        }, 700);
+      }
+
+      // Simulation triggers
+      btnSimValid.addEventListener('click', () => {
+        '123456'.split('').forEach((ch, i) => otpCells[i].value = ch);
+        otpCells[5].focus();
+      });
+
+      btnSimInvalid.addEventListener('click', () => {
+        '998877'.split('').forEach((ch, i) => otpCells[i].value = ch);
+        otpCells[5].focus();
+      });
+
+      btnSimExpired.addEventListener('click', () => {
+        '000000'.split('').forEach((ch, i) => otpCells[i].value = ch);
+        otpCells[5].focus();
+      });
+
+      // OAuth Handlers
+      oauthButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const provider = btn.getAttribute('data-oauth-provider');
+          oauthStatusTitle.textContent = `Connecting to ${provider}`;
+          oauthStatusSub.textContent = `Establishing Sahara handshake via TLS 1.3...`;
+          oauthProgress.style.width = '25%';
+          oauthModal.classList.remove('opacity-0', 'pointer-events-none');
+
+          setTimeout(() => {
+            oauthProgress.style.width = '70%';
+            oauthStatusSub.textContent = 'Verifying warm cryptographic trust signatures...';
+          }, 600);
+
+          setTimeout(() => {
+            oauthProgress.style.width = '100%';
+            oauthStatusTitle.textContent = 'Identity Authorized';
+            oauthStatusSub.textContent = 'Redirecting to Sahara Portal...';
+          }, 1200);
+
+          setTimeout(() => {
+            oauthModal.classList.add('opacity-0', 'pointer-events-none');
+            showToast(`${provider} Connected`, 'Session established with enterprise SSO.');
+          }, 1700);
+        });
+      });
+
+      document.getElementById('login-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        showToast('Welcome back!', 'Authenticated into Sahara session nexus.');
+      });
+    })();
+  </script>
+
+
+</body></html>
